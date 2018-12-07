@@ -4,17 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thijs Bremeesch</title>
+    <script>
+      WebFontConfig = {
+        google: {
+          families: ["Lato"]
+        }
+      };
+
+      (function(d) {
+        var wf = d.createElement("script"),
+          s = d.scripts[0];
+        wf.src = "https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js";
+        wf.async = true;
+        s.parentNode.insertBefore(wf, s);
+      })(document);
+    </script>
   </head>
   <body>
-    <main>
-      <header><h1 class="hidden">Thijs Bremeesch</h1></header>
-      <section>
-        <h2>Hey there!</h2>
+    <header><h1 class="hidden">Thijs Bremeesch</h1></header>
+    <main class="container">
+      <section class="hey">
+        <h2 class="heading-1">Hey there!</h2>
         <p>
           I’m Thijs Bremeesch, a normal boy that has a abnormal love for design.
         </p>
       </section>
-      <section>
+      <section class="construction">
         <h2 class="hidden">In construction</h2>
         <p>
           This site is currently in construction..<br />
@@ -24,14 +39,14 @@
           >
         </p>
       </section>
-      <section>
+      <section class="contact">
         <h2 class="hidden">Contact</h2>
         <p>
           Do you need a designer? Or wanna say hello… <br />
           Don’t hesitate and mail me at thijs.bremeesch@gmail.com
         </p>
       </section>
-      <footer>Site made and designed by Thijs Bremeesch</footer>
     </main>
+    <footer class="footer">Site made and designed by Thijs Bremeesch</footer>
   </body>
 </html>
