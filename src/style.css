@@ -16,6 +16,7 @@
 body {
   font-size: 1.6rem;
   line-height: 1.5;
+  letter-spacing: .1;
 }
 
 .wf-roboto-n4-active body {
@@ -27,45 +28,43 @@ body {
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 3vw 1fr 3vw;
-  grid-template-rows: 3vw 1fr 3vw;
+  padding: 3vw;
 }
 
 .container_construction {
-  grid-column: 2;
-  grid-row: 2;
-
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: auto 1fr;
-  grid-template-areas:
-    'title .'
-    'content thanks';
-}
-
-.hey {
-  grid-area: title;
+  margin: 0 auto;
+  max-width: 96rem;
 }
 
 .content {
-  grid-area: content;
-  padding: 1.5rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+
+  padding: 1.5% 2%;
   border: solid .2rem #f28d4f;
+  height: 50%;
 }
 
-.thanks {
-  grid-area: thanks;
-
-  font-size: 1rem;
-  color: #f28d4f;
-}
-
-.content--construction {
-  grid-area: content;
+.content--article {
+  grid-column: 1;
 }
 
 .content--contact {
+  padding-top: 3rem;
   text-align: right;
+}
+
+.thanks {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    width: 10rem;
+    transform: rotate(90deg) translateX(-12%) translateY(100%);
+    content: 'Thanks for visiting.';
+    font-size: 1rem;
+    color: #f28d4f;
+  }
 }
