@@ -1,4 +1,5 @@
 @import './css/reset.css';
+@import './css/vars.css';
 
 /* stylelint-disable */
 
@@ -19,52 +20,58 @@ body {
   letter-spacing: .1;
 }
 
-.wf-roboto-n4-active body {
-  font-family: Roboto, Arial, sans-serif;
-}
-
 .header-1 {
   font-size: 8rem;
 }
 
 .container {
+  margin: 0 auto;
+  max-width: 96rem;
   padding: 3vw;
 }
 
-.container_construction {
-  margin: 0 auto;
-  max-width: 96rem;
+.grid-container {
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  grid-template-areas:
+    'title'
+    'content';
+}
+
+.title-hey {
+  grid-area: title;
 }
 
 .content {
-  display: grid;
-  grid-template-columns: 1fr auto;
+  grid-area: content;
 
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    'firstword'
+    'contact';
+
+  min-height: 65vh;
   padding: 1.5% 2%;
-  border: solid .2rem #f28d4f;
-  height: 50%;
+  border: solid .2rem var(--color-orange);
 }
 
-.content--article {
-  grid-column: 1;
+.content--firstword {
+  grid-template: firstword;
 }
 
 .content--contact {
+  grid-template: contact;
   padding-top: 3rem;
   text-align: right;
-}
-
-.thanks {
-  display: flex;
-  flex-direction: column-reverse;
-  position: relative;
+  align-self: end;
 
   &::after {
     position: absolute;
-    width: 10rem;
-    transform: rotate(90deg) translateX(-12%) translateY(100%);
+    width: 7.9rem;
     content: 'Thanks for visiting.';
     font-size: 1rem;
-    color: #f28d4f;
+    color: var(--color-orange);
+    transform: rotate(90deg) translateX(-50%) translateY(8%);
   }
 }
