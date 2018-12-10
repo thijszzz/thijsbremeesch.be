@@ -6,15 +6,15 @@
     <title>Thijs Bremeesch</title>
     <script>
       WebFontConfig = {
-        google: {
-          families: ["Roboto:400,700"]
+        custom: {
+          families: ["Roboto", "Playfair Display"],
+          urls: ["assets/fonts/fonts.css"]
         }
       };
 
       (function(d) {
         var wf = d.createElement("script"),
           s = d.scripts[0];
-        wf.src = "https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js";
         wf.async = true;
         s.parentNode.insertBefore(wf, s);
       })(document);
@@ -34,7 +34,10 @@
               This site is currently under construction.
               <span>(sorry guys...)</span><br />
               If your dying to see some of my work, this is my
-              <a href="https://www.behance.net/t-thijs/" target="_blank"
+              <a
+                class="a--link"
+                href="https://www.behance.net/t-thijs/"
+                target="_blank"
                 >behance profile</a
               >.
             </p>
@@ -44,7 +47,7 @@
             <p>
               Do you need a designer? Or just wanna say hello?<br />
               Don’t hesitate and mail me at
-              <a href="mailto:thijs.bremeesch@gmail.com"
+              <a class="a--link" href="mailto:thijs.bremeesch@gmail.com"
                 >thijs.bremeesch@gmail.com</a
               ><br />
               I'll be thrilled to talk/work with you!
