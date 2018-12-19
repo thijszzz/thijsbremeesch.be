@@ -9,7 +9,7 @@
     "babel-loader": "^8.0.4",
     "css-loader": "^1.0.0",
     "cssnano": "^4.1.5",
-    "eslint": "^5.8.0",
+    "eslint": "^5.10.0",
     "eslint-config-devine": "^2.0.0",
     "file-loader": "^2.0.0",
     "fs-extra": "^7.0.0",
