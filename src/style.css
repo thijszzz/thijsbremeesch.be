@@ -24,13 +24,17 @@
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1.5;
   letter-spacing: .01rem;
   font-weight: 500;
 
   background-color: black;
   color: white;
+
+  @media (--sm) {
+    font-size: 1.6rem;
+  }
 }
 
 .wf-roboto-n4-active body {
@@ -48,7 +52,7 @@ body {
 
 .title-animation {
   font-size: 3em;
-  margin-bottom: .5em;
+  padding-bottom: .3em;
   position: relative;
 
   &::after {
@@ -60,6 +64,11 @@ body {
     transform: translateX(.1em) translateY(1.2em);
 
     animation: on-of 1600ms infinite reverse;
+  }
+
+  @media (--sm) {
+    font-size: 5em;
+    padding-bottom: .2em;
   }
 }
 
@@ -90,7 +99,7 @@ body {
     'contactme';
 
   min-height: 65vh;
-  padding: 1.5vw 2vw;
+  padding: 1.5% 2%;
   border: solid .2rem var(--color-orange);
 }
 
@@ -102,6 +111,22 @@ body {
   grid-area: contactme;
   text-align: right;
   align-self: end;
+
+  @media (--lg) {
+
+    &::after {
+      position: absolute;
+      width: max-content;
+      content: 'Thanks for visiting.';
+      font-size: 1rem;
+      color: var(--color-orange);
+      transform: rotate(90deg) translateX(-50%) translateY(70%);
+    }
+  }
+}
+
+.name {
+  font-style: italic;
 }
 
 .text-aside {
