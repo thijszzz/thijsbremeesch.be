@@ -14,8 +14,17 @@
   display: none;
 }
 
+.wf-playfairdisplay-n7-active,
+.header-1 {
+  font-family: 'playfair display', times, serif;
+}
+
+.wf-roboto-n4-active,
 body {
-  font-family: roboto, sans-serif;
+  font-family: roboto, Arial, Helvetica, sans-serif;
+}
+
+body {
   font-size: 1.6rem;
   line-height: 1.5;
   letter-spacing: .03rem;
@@ -25,7 +34,6 @@ body {
 }
 
 .header-1 {
-  font-family: 'playfair display', times, serif;
   font-size: 8rem;
   letter-spacing: .2rem;
   font-weight: 700;
