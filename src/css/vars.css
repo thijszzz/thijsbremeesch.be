@@ -1,5 +1,10 @@
 :root {
   --color-orange: #f28d4f;
-  --weight-regular: 400;
-  --weight-bold: 700;
+  --color-gray: rgb(126, 126, 126);
 }
+
+@custom-media --xs screen and (min-width: 0);
+@custom-media --sm screen and (min-width: 576px);
+@custom-media --md screen and (min-width: 768px);
+@custom-media --lg screen and (min-width: 992px);
+@custom-media --xl screen and (min-width: 1260px);
