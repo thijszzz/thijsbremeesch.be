@@ -32,7 +32,7 @@ body {
   background-color: black;
   color: white;
 
-  @media (--sm) {
+  @media (--md) {
     font-size: 1.6rem;
   }
 }
@@ -62,12 +62,16 @@ body {
   &::after {
     position: absolute;
     content: '';
-    width: 5rem;
+    width: 3.5rem;
     height: .4rem;
     background-color: var(--color-orange);
     transform: translateX(.1em) translateY(1.2em);
 
     animation: on-of 1600ms infinite reverse;
+
+    @media (--sm) {
+      width: 5rem;
+    }
   }
 
   @media (--sm) {
@@ -148,6 +152,7 @@ body {
 
 .babyme .babyme--img {
   visibility: hidden;
+  margin: .5rem;
   border: solid .2rem var(--color-orange);
 
   position: absolute;
