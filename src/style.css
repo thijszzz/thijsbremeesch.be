@@ -41,6 +41,10 @@ body {
   font-family: roboto, Arial, Helvetica, sans-serif;
 }
 
+.font_italic {
+  font-style: italic;
+}
+
 .containter {
   margin: 0 auto;
   padding: 3vw;
@@ -125,29 +129,9 @@ body {
   }
 }
 
-.name {
-  font-style: italic;
-}
-
 .text-aside {
   color: var(--color-gray);
 }
-
-/* .content--contact {
-  grid-template: contact;
-  padding-top: 3rem;
-  text-align: right;
-  align-self: end;
-
-  &::after {
-    position: absolute;
-    width: max-content;
-    content: 'Thanks for visiting.';
-    font-size: 1rem;
-    color: var(--color-orange);
-    transform: rotate(90deg) translateX(-50%) translateY(100%);
-  }
-} */
 
 .a--link {
   text-decoration: none;
@@ -160,4 +144,16 @@ body {
     background-color: var(--color-orange);
     transition: 80ms ease-in;
   }
+}
+
+.babyme .babyme--img {
+  visibility: hidden;
+  border: solid .2rem var(--color-orange);
+
+  position: absolute;
+  z-index: 1;
+}
+
+.babyme:hover .babyme--img {
+  visibility: visible;
 }
