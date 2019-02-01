@@ -1,5 +1,7 @@
 @import './css/reset.css';
 @import './css/vars.css';
+@import './css/typo.css';
+@import './css/btn.css';
 
 /* stylelint-disable */
 
@@ -10,42 +12,30 @@
 }
 /* stylelint-enable */
 
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  display: grid;
+}
+
 .hide {
   display: none;
 }
 
-.header-1 {
-  letter-spacing: .1rem;
-  color: var(--color-orange);
-}
+.d-none {
+  display: none;
 
-.wf-playfairdisplay-n7-active .header-1 {
-  font-family: 'playfair display', times, serif;
-}
-
-body {
-  font-size: 1.4rem;
-  line-height: 1.5;
-  letter-spacing: .01rem;
-  font-weight: 500;
-
-  background-color: black;
-  color: white;
-
-  @media (--md) {
-    font-size: 1.6rem;
+  @media (--lg) {
+    display: block;
   }
 }
 
-.wf-roboto-n4-active body {
-  font-family: roboto, Arial, Helvetica, sans-serif;
-}
-
-.font_italic {
-  font-style: italic;
+body {
+  background-color: black;
 }
 
 .containter {
+  overflow-x: hidden;
   margin: 0 auto;
   padding: 3vw;
 
@@ -55,7 +45,6 @@ body {
 }
 
 .title-animation {
-  font-size: 3em;
   padding-bottom: .3em;
   position: relative;
 
@@ -72,11 +61,6 @@ body {
     @media (--sm) {
       width: 5rem;
     }
-  }
-
-  @media (--sm) {
-    font-size: 5em;
-    padding-bottom: .2em;
   }
 }
 
@@ -106,6 +90,7 @@ body {
     'myself'
     'contactme';
 
+  width: 100%;
   min-height: 65vh;
   padding: 1.5% 2%;
   border: solid .2rem var(--color-orange);
@@ -119,6 +104,7 @@ body {
   grid-area: contactme;
   text-align: right;
   align-self: end;
+  position: relative;
 
   @media (--lg) {
 
@@ -135,30 +121,4 @@ body {
 
 .text-aside {
   color: var(--color-gray);
-}
-
-.a--link {
-  text-decoration: none;
-  color: white;
-  border-bottom: .1rem solid var(--color-orange);
-  padding: .2rem;
-  font-style: italic;
-
-  &:hover {
-    background-color: var(--color-orange);
-    transition: 80ms ease-in;
-  }
-}
-
-.babyme .babyme--img {
-  visibility: hidden;
-  margin: .5rem;
-  border: solid .2rem var(--color-orange);
-
-  position: absolute;
-  z-index: 1;
-}
-
-.babyme:hover .babyme--img {
-  visibility: visible;
 }

@@ -42,6 +42,7 @@
   "browserslist": [
     "last 2 versions",
     "> 1%",
-    "not dead"
+    "not dead",
+    "ie 10"
   ]
 }

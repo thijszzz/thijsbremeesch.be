@@ -133,18 +133,3 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
-html {
-  font-size: 62.5%;
-  box-sizing: border-box;
-  height: 100%;
-}
-
-/* stylelint-disable */
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-/* stylelint-enable */
