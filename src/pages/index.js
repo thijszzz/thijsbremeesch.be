@@ -19,6 +19,7 @@ const IndexPage = () => {
           </li>
         ))}
       </ol>
+
       <ol>
         {externalLinks.map(({ title, link, image }, i) => (
           <li key={`link-${i}`}>
@@ -34,6 +35,7 @@ const IndexPage = () => {
           </li>
         ))}
       </ol>
+      <Link to="/contact">Contact me please</Link>
     </Layout>
   )
 }
