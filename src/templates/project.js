@@ -24,12 +24,12 @@ const ProjectPage = ({ data, pageContext }) => {
       <Link to="/">Back</Link>
       {pageContext.prevProject && (
         <Link to={`/project/${pageContext.prevProject.slug}`}>
-          Previous project
+          <button>Previous project</button>
         </Link>
       )}
       {pageContext.nextProject && (
         <Link to={`/project/${pageContext.nextProject.slug}`}>
-          Next project
+          <button>Next project</button>
         </Link>
       )}
       <h1>{project.title}</h1>
