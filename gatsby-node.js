@@ -14,12 +14,16 @@ exports.createPages = ({ graphql, actions }) => {
       }
     }
   `).then(({ data }) => {
-    data.allContentfulProject.nodes.forEach(({ slug }) => {
+    const projects = data.allContentfulProject.nodes
+    projects.forEach((project, i) => {
       createPage({
-        path: `/project/${slug}`,
+        path: `/project/${project.slug}`,
         component: path.resolve(`./src/templates/project.js`),
-        // TODO: add next and previous project to context
-        context: { slug },
+        context: {
+          slug: project.slug,
+          prevProject: projects[i - 1],
+          nextProject: projects[i + 1],
+        },
       })
     })
   })

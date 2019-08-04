@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Wouter Landuydt <wouter.landuydt@gmail.com>",
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^13.2.0",
     "gatsby": "^2.13.45",
     "gatsby-image": "^2.2.7",
     "gatsby-plugin-manifest": "^2.2.4",
@@ -14,6 +15,7 @@
     "gatsby-source-contentful": "^2.1.17",
     "gatsby-source-filesystem": "^2.1.7",
     "gatsby-transformer-sharp": "^2.2.5",
+    "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
