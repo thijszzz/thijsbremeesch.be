@@ -7,7 +7,8 @@ import { encode } from "../lib"
 const ContactPage = () => {
   const [state, setState] = React.useState({})
 
-  const handleChange = e => setState({ [e.target.name]: e.target.value })
+  const handleChange = e =>
+    setState({ ...state, [e.target.name]: e.target.value })
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -22,7 +23,7 @@ const ContactPage = () => {
       }),
     })
       .then(() => navigate(form.getAttribute("action")))
-      .catch(error => alert(error))
+      .catch(error => console.error(error))
   }
 
   return (
@@ -41,7 +42,7 @@ const ContactPage = () => {
         <input type="hidden" name="form-name" value="contact" />
         <p hidden>
           <label>
-            Don’t fill this out:{" "}
+            Don’t fill this out:
             <input name="bot-field" onChange={handleChange} />
           </label>
         </p>
