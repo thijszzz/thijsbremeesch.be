@@ -1,16 +1,27 @@
 import React from "react"
 import Layout from "../components/layout"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import SEO from "../components/seo"
 import PropTypes from "prop-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-const ProjectPage = ({ data }) => {
+const ProjectPage = ({ data, pageContext }) => {
   const { contentfulProject: project } = data
 
   return (
     <Layout>
       <SEO title={project.title} />
+      <Link to="/">Back</Link>
+      {pageContext.prevProject && (
+        <Link to={`/project/${pageContext.prevProject.slug}`}>
+          Previous project
+        </Link>
+      )}
+      {pageContext.nextProject && (
+        <Link to={`/project/${pageContext.nextProject.slug}`}>
+          Next project
+        </Link>
+      )}
       <h1>{project.title}</h1>
       <dl>
         <img src={project.headerImage.fixed.src} alt=""></img>
