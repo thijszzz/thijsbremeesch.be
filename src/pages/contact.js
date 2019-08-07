@@ -50,14 +50,14 @@ const ContactPage = () => {
           <label>
             Your name:
             <br />
-            <input type="text" name="name" onChange={handleChange} />
+            <input required type="text" name="name" onChange={handleChange} />
           </label>
         </p>
         <p>
           <label>
             Your email:
             <br />
-            <input type="email" name="email" onChange={handleChange} />
+            <input required type="email" name="email" onChange={handleChange} />
           </label>
         </p>
         <p>
