@@ -1,5 +1,11 @@
 :root {
-  --max-width: 900px;
+  --xs: 2px;
+  --s: 4px;
+  --m: 8px;
+  --l: 16px;
+  --xl: 32px;
+
+  --max-width: 960px;
 
   --c-primary: #000000;
   --c-secondary: red;
