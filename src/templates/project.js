@@ -1,5 +1,5 @@
 import React from "react"
-import { Layout } from "../components/Layout/Layout"
+import { Layout } from "../components/Layout"
 import { graphql, Link } from "gatsby"
 import SEO from "../components/seo"
 import PropTypes from "prop-types"

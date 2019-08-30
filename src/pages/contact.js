@@ -1,5 +1,5 @@
 import React from "react"
-import { Layout } from "../components/layout"
+import { Layout } from "../components/Layout"
 import { navigate } from "gatsby-link"
 import SEO from "../components/seo"
 import { encode } from "../lib"
