@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import PropTypes from "prop-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types"
+import Img from "gatsby-image"
 
 const options = {
   renderNode: {
@@ -22,19 +23,9 @@ const ProjectPage = ({ data, pageContext }) => {
     <Layout>
       <SEO title={project.title} />
       <Link to="/">Back</Link>
-      {pageContext.prevProject && (
-        <Link to={`/project/${pageContext.prevProject.slug}`}>
-          <button>Previous project</button>
-        </Link>
-      )}
-      {pageContext.nextProject && (
-        <Link to={`/project/${pageContext.nextProject.slug}`}>
-          <button>Next project</button>
-        </Link>
-      )}
       <h1>{project.title}</h1>
       <dl>
-        <img src={project.headerImage.fixed.src} alt=""></img>
+        <Img sizes={project.headerImage.sizes} />
         <dt>Client</dt>
         <dd>
           {project.clients.map(({ name }) => (
@@ -63,6 +54,18 @@ const ProjectPage = ({ data, pageContext }) => {
 
       <p>{project.intro.intro}</p>
       <div>{documentToReactComponents(project.body.json, options)}</div>
+
+      {/* {pageContext.prevProject && (
+        <Link to={`/project/${pageContext.prevProject.slug}`}>
+          <button>Previous project</button>
+        </Link>
+      )} */}
+      <Link to="/">Back to home</Link>
+      {pageContext.nextProject && (
+        <Link to={`/project/${pageContext.nextProject.slug}`}>
+          <button>Next project</button>
+        </Link>
+      )}
     </Layout>
   )
 }
@@ -78,8 +81,8 @@ export const pageQuery = graphql`
       category
       date
       headerImage {
-        fixed {
-          src
+        sizes(maxWidth: 1440) {
+          ...GatsbyContentfulSizes
         }
       }
       id
