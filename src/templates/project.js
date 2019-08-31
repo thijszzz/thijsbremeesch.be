@@ -25,7 +25,7 @@ const ProjectPage = ({ data, pageContext }) => {
       <Link to="/">Back</Link>
       <h1>{project.title}</h1>
       <dl>
-        <Img sizes={project.headerImage.sizes} />
+        <Img sizes={project.headerImage.sizes} alt={`${project.title} image`} />
         <dt>Client</dt>
         <dd>
           {project.clients.map(({ name }) => (
@@ -82,7 +82,7 @@ export const pageQuery = graphql`
       date
       headerImage {
         sizes(maxWidth: 1440) {
-          ...GatsbyContentfulSizes
+          ...GatsbyContentfulSizes_withWebp
         }
       }
       id
