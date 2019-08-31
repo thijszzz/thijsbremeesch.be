@@ -8,3 +8,7 @@ strong,
 b {
   font-weight: bold;
 }
+
+.hide {
+  display: none;
+}

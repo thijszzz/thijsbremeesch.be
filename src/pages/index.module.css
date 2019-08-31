@@ -89,7 +89,7 @@
 
   .project-container {
     display: none;
-    animation: scaleIn 200ms;
+    animation: scaleIn 200ms ease-in;
   }
 
   .project-nav-container {
