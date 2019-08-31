@@ -2,7 +2,6 @@ import React from "react"
 
 const SignatureLogo = props => (
   <svg width={336} height={58} {...props}>
-    <title>{"LOGO_black"}</title>
     <defs>
       <path id="prefix__a" d="M0 .476h335.536V58H0z" />
     </defs>
