@@ -126,7 +126,7 @@ const query = graphql`
         tagline
         id
         previewImage {
-          sizes(maxWidth: 900) {
+          sizes(maxWidth: 530) {
             ...GatsbyContentfulSizes_withWebp
           }
         }

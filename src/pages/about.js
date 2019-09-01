@@ -57,7 +57,7 @@ const query = graphql`
         json
       }
       image {
-        sizes(maxWidth: 460) {
+        sizes(maxWidth: 420) {
           ...GatsbyContentfulSizes_withWebp
         }
       }

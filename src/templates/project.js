@@ -108,7 +108,7 @@ export const pageQuery = graphql`
       category
       date
       headerImage {
-        sizes(maxWidth: 1440) {
+        sizes(maxWidth: 960) {
           ...GatsbyContentfulSizes_withWebp
         }
       }
