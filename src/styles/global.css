@@ -1,7 +1,7 @@
 @import "../styles/variables.css";
 
 body {
-  background-color: white;
+  background-color: var(--c-white);
 }
 
 strong,
