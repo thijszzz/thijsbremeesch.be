@@ -1,0 +1,40 @@
+.main-container {
+  display: flex;
+  background-color: var(--c-black);
+
+  margin-left: 16px;
+  margin-top: 16px;
+}
+
+.main-image {
+  position: absolute;
+  width: 50%;
+  animation: popIn 200ms ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes popIn {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  100% {
+    top: -16px;
+    left: -16px;
+  }
+}
+
+.main-content-container {
+  width: 50%;
+  color: var(--c-white);
+  margin: var(--xl) var(--l) var(--l) 0;
+}
+
+.main-intro-container p:first-child {
+  margin-top: var(--l);
+  margin-bottom: var(--l);
+}
+
+.main-link-list {
+  margin-top: 80px;
+}

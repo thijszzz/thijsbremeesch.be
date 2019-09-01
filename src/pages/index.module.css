@@ -4,7 +4,7 @@
 }
 
 .projects-container-list {
-  width: 80%;
+  width: 100%;
 }
 
 .project-container {
@@ -15,37 +15,64 @@
   position: relative;
   width: 100%;
   height: 100%;
+  background-color: var(--c-black);
 
-  /* margin to compensate ::before offset */
-  margin-right: 20px;
-  margin-bottom: 20px;
+  margin-left: 16px;
+  margin-top: 16px;
 }
 
-.project-image-container::before {
-  z-index: -1;
-  content: "";
-  display: block;
+.project-image {
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 20px;
-  left: 20px;
-  background-color: var(--c-primary);
+  top: -16px;
+  left: -16px;
+
+  transition: filter 200ms;
+  filter: grayscale(1);
+
+  animation: popIn 200ms ease-out;
+  animation-fill-mode: forwards;
 }
 
-.project-image-container img {
-  width: 100%;
+@keyframes popIn {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  100% {
+    top: -16px;
+    left: -16px;
+  }
+}
+
+.project-image:hover {
+  filter: grayscale(0);
 }
 
 .project-title-container {
   position: absolute;
   right: -5%;
   top: 30%;
+  opacity: 0;
+
+  animation: fadeIn 300ms;
+  animation-delay: 100ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .project-title {
   width: 100%;
-  background-color: var(--c-primary);
+  background-color: var(--c-black);
 
   font-size: 40px;
 }
@@ -53,20 +80,13 @@
 .project-subtitle {
   width: 100%;
   display: inline-block;
-  background-color: white;
+  background-color: var(--c-white);
 
   font-size: 20px;
 }
 
 .project-nav-container {
-}
-
-.project-nav-dots-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.project-nav-arrows-container {
+  display: none;
 }
 
 .contact-container {
@@ -77,4 +97,40 @@
 
 .links-list {
   display: flex;
+}
+
+@media (min-width: 768px) {
+  .project-container {
+    display: none;
+  }
+
+  .project-nav-container {
+    display: block;
+    width: 20%;
+  }
+
+  .project-nav-dot-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .project-nav-dot {
+    box-sizing: content-box;
+    border: none;
+    width: 2px;
+    height: 50px;
+    background-clip: content-box;
+    background-color: var(--c-black);
+    cursor: pointer;
+    transition: transform 200ms;
+  }
+
+  .project-nav-dot:hover {
+    transform: scaleX(2);
+  }
+
+  .project-nav-dot:not(:last-child) {
+    margin-bottom: var(--l);
+  }
 }

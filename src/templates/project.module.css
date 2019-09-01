@@ -1,0 +1,24 @@
+.headerImage {
+  height: 42vw;
+  max-height: 450px;
+  min-height: 180px;
+}
+
+.quick-info-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  margin: var(--l) 0;
+}
+
+.main-container {
+  display: flex;
+}
+
+.content-container {
+  width: 70%;
+  margin-right: var(--l);
+  margin-bottom: var(--xl);
+}

@@ -5,8 +5,9 @@
   --l: 16px;
   --xl: 32px;
 
-  --max-width: 1440px;
+  --max-width: 960px;
 
-  --c-primary: #000000;
-  --c-secondary: red;
+  --c-black: #000000;
+  --c-white: #ffffff;
+  --c-accent: red;
 }
