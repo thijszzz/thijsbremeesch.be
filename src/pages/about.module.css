@@ -9,8 +9,19 @@
 .main-image {
   position: absolute;
   width: 50%;
-  top: -16px;
-  left: -16px;
+  animation: popIn 200ms ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes popIn {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  100% {
+    top: -16px;
+    left: -16px;
+  }
 }
 
 .main-content-container {

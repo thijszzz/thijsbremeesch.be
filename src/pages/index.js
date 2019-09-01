@@ -35,7 +35,6 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <p>{navIndex}</p>
       <SEO title="Home" />
       <section className={styles.projectsContainer}>
         <ol className={styles.projectsContainerList}>
@@ -63,11 +62,14 @@ const IndexPage = () => {
         </ol>
 
         <div className={styles.projectNavContainer}>
-          <div className={styles.projectNavDotsContainer}>
+          <div className={styles.projectNavDotContainer}>
             {projects.map((_project, i) => (
-              <button key={`nav-${i}`} onClick={() => setNavIndex(i)}>
-                {i}
-              </button>
+              <button
+                className={styles.projectNavDot}
+                key={`nav-${i}`}
+                onClick={() => setNavIndex(i)}
+                style={{ transform: i === navIndex && "scaleX(2)" }}
+              />
             ))}
           </div>
 

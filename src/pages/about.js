@@ -19,6 +19,7 @@ const AboutPage = () => {
         <Img
           sizes={contentfulAboutPage.image.sizes}
           className={styles.mainImage}
+          alt=""
         />
 
         <div className={styles.mainContentContainer}>
