@@ -39,7 +39,7 @@ const IndexPage = () => {
       <SEO title="Home" />
       <section className={styles.projectsContainer}>
         <ol className={styles.projectsContainerList}>
-          {projects.map(({ title, id, slug, previewImage }, i) => (
+          {projects.map(({ title, id, slug, previewImage, tagline }, i) => (
             <li
               key={id}
               className={styles.projectContainer}
@@ -55,9 +55,7 @@ const IndexPage = () => {
                 </div>
                 <div className={styles.projectTitleContainer}>
                   <h2 className={styles.projectTitle}>{title}</h2>
-                  <span className={styles.projectSubtitle}>
-                    Tagline comes here
-                  </span>
+                  <span className={styles.projectSubtitle}>{tagline}</span>
                 </div>
               </Link>
             </li>
@@ -125,6 +123,7 @@ const query = graphql`
       nodes {
         slug
         title
+        tagline
         id
         previewImage {
           sizes(maxWidth: 900) {
