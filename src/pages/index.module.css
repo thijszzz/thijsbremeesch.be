@@ -73,16 +73,21 @@
 .project-title {
   width: 100%;
   background-color: var(--c-black);
-
-  font-size: 40px;
+  color: var(--c-white);
+  font-family: Arial;
+  font-weight: 900;
+  font-size: 4.2rem;
+  padding: 8px 16px;
 }
 
 .project-subtitle {
   width: 100%;
   display: inline-block;
   background-color: var(--c-white);
-
-  font-size: 20px;
+  color: var(--c-black);
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 8px 16px;
 }
 
 .project-nav-container {
