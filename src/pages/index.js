@@ -97,10 +97,10 @@ const IndexPage = () => {
           {externalLinks.map(
             ({ title, link, image }, i) =>
               image && (
-                <li key={`link-${i}`}>
+                <li key={`link-${i}`} className={styles.linksListItem}>
                   <a href={link}>
                     <img
-                      src={image.fixed.src}
+                      src={image.file.url}
                       width={20}
                       height={20}
                       title={title}
@@ -123,8 +123,8 @@ const query = graphql`
         title
         link
         image {
-          fixed {
-            src
+          file {
+            url
           }
         }
       }

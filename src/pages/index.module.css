@@ -86,7 +86,7 @@
   background-color: var(--c-white);
   color: var(--c-black);
   font-weight: bold;
-  padding: 8px 16px;
+  padding: var(--m) var(--l);
 }
 
 .project-nav-container {
@@ -96,7 +96,8 @@
 .contact-container {
   display: flex;
   justify-content: space-between;
-  margin: var(--l) 0;
+  align-items: center;
+  margin-top: var(--xl);
 }
 
 .contact-text {
@@ -112,6 +113,20 @@
 
 .links-list {
   display: flex;
+}
+
+.links-list-item:not(:last-child) {
+  margin-right: var(--l);
+}
+
+.links-list-item img {
+  height: 16px;
+  width: auto;
+  opacity: 0.5;
+}
+
+.links-list-item img:hover {
+  opacity: 0.8;
 }
 
 @media (min-width: 768px) {

@@ -6,6 +6,7 @@
 
 .footer-container {
   margin: 0 auto;
+  margin-top: var(--l);
   max-width: var(--max-width);
   width: 90vw;
 
