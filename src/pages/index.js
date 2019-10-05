@@ -62,14 +62,19 @@ const IndexPage = () => {
         </ol>
 
         <div className={styles.projectNavContainer}>
-          <div className={styles.projectNavDotContainer}>
+          <div className={styles.projectNavButtonContainer}>
             {projects.map((_project, i) => (
-              <button
-                className={styles.projectNavDot}
-                key={`nav-${i}`}
-                onClick={() => setNavIndex(i)}
-                style={{ transform: i === navIndex && "scaleX(2)" }}
-              />
+              <>
+                <button
+                  className={styles.projectNavButton}
+                  key={`nav-${i}`}
+                  onClick={() => setNavIndex(i)}
+                  style={{ transform: i === navIndex && "scale(10, 0.2)" }}
+                />
+                {i !== projects.length - 1 && (
+                  <div className={styles.projectNavSeparator} />
+                )}
+              </>
             ))}
           </div>
 

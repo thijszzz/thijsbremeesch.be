@@ -107,30 +107,38 @@
   .project-nav-container {
     display: block;
     width: 20%;
+    overflow-x: hidden;
   }
 
-  .project-nav-dot-container {
+  .project-nav-button-container {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
   }
 
-  .project-nav-dot {
+  .project-nav-button {
     box-sizing: content-box;
     border: none;
     width: 2px;
-    height: 50px;
+    height: 12px;
     background-clip: content-box;
-    background-color: var(--c-black);
+    padding: 0 12px;
+    background-color: var(--c-accent);
     cursor: pointer;
-    transition: transform 200ms;
+    transition: transform 400ms ease-out;
+    position: relative;
+    margin: 24px 0;
   }
 
-  .project-nav-dot:hover {
+  .project-nav-separator {
+    background-color: var(--c-grey);
+    background-clip: content-box;
+    padding: 0 12px;
+    width: 2px;
+    height: 48px;
+  }
+
+  .project-nav-button:hover {
     transform: scaleX(2);
-  }
-
-  .project-nav-dot:not(:last-child) {
-    margin-bottom: var(--l);
   }
 }
