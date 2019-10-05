@@ -13,10 +13,12 @@ export const Header = ({ siteTitle }) => (
       </Link>
     </h1>
 
-    <nav>
-      <ol>
-        <li>
-          <Link to="/about">About</Link>
+    <nav className={styles.nav}>
+      <ol className={styles.navList}>
+        <li className={styles.navListItem}>
+          <Link className={styles.navListLink} to="/about">
+            about
+          </Link>
         </li>
       </ol>
     </nav>
