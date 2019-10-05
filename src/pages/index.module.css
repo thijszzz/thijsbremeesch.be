@@ -105,7 +105,9 @@
   }
 
   .project-nav-container {
-    display: block;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
     width: 20%;
     overflow-x: hidden;
   }
@@ -140,5 +142,9 @@
 
   .project-nav-button:hover {
     transform: scaleX(2);
+  }
+
+  .project-nav-arrows-container {
+    margin-top: auto;
   }
 }
