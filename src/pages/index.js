@@ -79,8 +79,12 @@ const IndexPage = () => {
           </div>
 
           <div className={styles.projectNavArrowsContainer}>
-            <button onClick={navigateUp}>↑</button>
-            <button onClick={navigateDown}>↓</button>
+            <button className={styles.projectNavArrow} onClick={navigateUp}>
+              ↑
+            </button>
+            <button className={styles.projectNavArrow} onClick={navigateDown}>
+              ↓
+            </button>
           </div>
         </div>
       </section>
