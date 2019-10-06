@@ -1,3 +1,23 @@
+@keyframes popIn {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  100% {
+    top: -16px;
+    left: -16px;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .projects-container {
   display: flex;
   justify-content: space-between;
@@ -11,39 +31,11 @@
   position: relative;
 }
 
-.project-image-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: var(--c-black);
-
-  margin-left: 16px;
-  margin-top: 16px;
+.project-container a {
+  text-decoration: none;
 }
 
 .project-image {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: -16px;
-  left: -16px;
-
-  transition: filter 200ms;
-  filter: grayscale(1);
-
-  animation: popIn 200ms ease-out;
-  animation-fill-mode: forwards;
-}
-
-@keyframes popIn {
-  0% {
-    top: 0;
-    left: 0;
-  }
-  100% {
-    top: -16px;
-    left: -16px;
-  }
 }
 
 .project-image:hover {
@@ -51,42 +43,17 @@
 }
 
 .project-title-container {
-  position: absolute;
-  right: -5%;
-  top: 30%;
-  opacity: 0;
-
-  animation: fadeIn 300ms;
-  animation-delay: 100ms;
-  animation-fill-mode: forwards;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 .project-title {
-  width: 100%;
-  background-color: var(--c-black);
-  color: var(--c-white);
+  color: var(--c-black);
   font-family: Arial;
   font-weight: 900;
   font-size: 4.2rem;
-  padding: 8px 16px;
 }
 
 .project-subtitle {
-  width: 100%;
-  display: inline-block;
-  background-color: var(--c-white);
-  color: var(--c-black);
-  font-weight: bold;
-  padding: var(--m) var(--l);
+  display: none;
 }
 
 .project-nav-container {
@@ -132,6 +99,58 @@
 @media (min-width: 768px) {
   .project-container {
     display: none;
+  }
+
+  .project-title-container {
+    position: absolute;
+    right: -5%;
+    top: 30%;
+    opacity: 0;
+
+    animation: fadeIn 300ms;
+    animation-delay: 100ms;
+    animation-fill-mode: forwards;
+  }
+
+  .project-title {
+    width: 100%;
+    background-color: var(--c-black);
+    color: var(--c-white);
+    font-size: 4.2rem;
+    padding: 8px 16px;
+  }
+
+  .project-subtitle {
+    width: 100%;
+    display: inline-block;
+    background-color: var(--c-white);
+    color: var(--c-black);
+    font-weight: bold;
+    padding: var(--m) var(--l);
+  }
+
+  .project-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--c-black);
+
+    margin-left: 16px;
+    margin-top: 16px;
+  }
+
+  .project-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -16px;
+    left: -16px;
+
+    transition: filter 200ms;
+    filter: grayscale(1);
+
+    animation: popIn 200ms ease-out;
+    animation-fill-mode: forwards;
   }
 
   .project-nav-container {

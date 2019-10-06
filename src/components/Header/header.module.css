@@ -1,7 +1,7 @@
 .header {
   max-width: var(--max-width);
-  width: 90vw;
   margin: 0 auto;
+  width: 94vw;
 
   height: 190px;
 
@@ -15,4 +15,10 @@
   text-decoration: none;
   color: var(--c-black);
   border-bottom: 2px solid var(--c-black);
+}
+
+@media (min-width: 768px) {
+  .header {
+    width: 90vw;
+  }
 }
