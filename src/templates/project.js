@@ -13,7 +13,7 @@ const options = {
   renderNode: {
     [BLOCKS.EMBEDDED_ASSET]: node => {
       const { file } = node.data.target.fields
-      return <img src={file["en-US"].url} alt="" width={200}></img>
+      return <img src={file["en-US"].url} alt="" width="100%" />
     },
   },
 }
@@ -57,8 +57,7 @@ const ProjectPage = ({ data, pageContext }) => {
 
       <div className={styles.mainContainer}>
         <div className={styles.contentContainer}>
-          <p>{project.intro.intro}</p>
-          <div>{documentToReactComponents(project.body.json, options)}</div>
+          {documentToReactComponents(project.body.json, options)}
         </div>
 
         <aside>
@@ -66,9 +65,11 @@ const ProjectPage = ({ data, pageContext }) => {
             <div>
               <dt>Team</dt>
               <dd>
-                {project.team.map(name => (
-                  <span key={name}>{name}</span>
-                ))}
+                <ol>
+                  {project.team.map(name => (
+                    <li key={name}>{name}</li>
+                  ))}
+                </ol>
               </dd>
             </div>
 
@@ -82,12 +83,11 @@ const ProjectPage = ({ data, pageContext }) => {
         </aside>
       </div>
 
-      {/* {pageContext.prevProject && (
+      {pageContext.prevProject && (
         <Link to={`/project/${pageContext.prevProject.slug}`}>
           <button>Previous project</button>
         </Link>
-      )} */}
-      <Link to="/">Back to home</Link>
+      )}
       {pageContext.nextProject && (
         <Link to={`/project/${pageContext.nextProject.slug}`}>
           <button>Next project</button>
@@ -119,9 +119,6 @@ export const pageQuery = graphql`
       clients {
         name
         link
-      }
-      intro {
-        intro
       }
       link
       team
