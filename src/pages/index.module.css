@@ -72,12 +72,6 @@
   color: var(--c-black);
 }
 
-.contact-text a {
-  color: var(--c-black);
-  text-decoration: none;
-  border-bottom: 2px solid var(--c-accent);
-}
-
 .links-list {
   display: flex;
 }

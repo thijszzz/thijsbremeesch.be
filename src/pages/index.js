@@ -94,8 +94,10 @@ const IndexPage = () => {
           Interested in being my next best (art)work or do you have just a
           simple question?
           <br />
-          <Link to="/contact">Let’s have a quick chat</Link>, no strings
-          attached!
+          <Link className="default-link" to="/contact">
+            Let’s have a quick chat
+          </Link>
+          , no strings attached!
         </p>
         <ol className={styles.linksList}>
           {externalLinks.map(
