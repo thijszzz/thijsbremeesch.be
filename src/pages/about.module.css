@@ -47,7 +47,7 @@
 }
 
 .main-link-list {
-  margin-top: 80px;
+  margin-top: var(--xl);
   margin-bottom: var(--l);
 }
 
@@ -106,6 +106,10 @@
   .main-content-container {
     width: 50%;
     margin: var(--xl) var(--l) var(--l) 0;
+  }
+
+  .main-link-list {
+    margin-top: 80px;
   }
 
   .content {
