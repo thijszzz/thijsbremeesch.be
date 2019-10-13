@@ -6,10 +6,21 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import HiOutline from "../assets/svg/hi_outline"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { INLINES } from "@contentful/rich-text-types"
 
 const AboutPage = () => {
   const data = useStaticQuery(query)
   const { contentfulAboutPage } = data
+
+  const options = {
+    renderNode: {
+      [INLINES.HYPERLINK]: ({ data, content }) => (
+        <a target="_blank" href={data.uri} className="default-link">
+          {content[0].value}
+        </a>
+      ),
+    },
+  }
 
   return (
     <Layout>
@@ -30,22 +41,27 @@ const AboutPage = () => {
           <ol className={styles.mainLinkList}>
             {contentfulAboutPage.resume && (
               <li>
-                <a href={contentfulAboutPage.resume.file.url}>
+                <a
+                  href={contentfulAboutPage.resume.file.url}
+                  className="default-link"
+                >
                   Check out my resume
                 </a>
               </li>
             )}
             <li>
-              <Link to="/contact">Contact me</Link>
+              <Link to="/contact" className="default-link">
+                Contact me
+              </Link>
             </li>
           </ol>
         </div>
       </section>
 
-      <span>{contentfulAboutPage.quote}</span>
+      <span className={styles.quote}>{contentfulAboutPage.quote}</span>
 
-      <section>
-        {documentToReactComponents(contentfulAboutPage.body.json)}
+      <section className={styles.content}>
+        {documentToReactComponents(contentfulAboutPage.body.json, options)}
       </section>
     </Layout>
   )
