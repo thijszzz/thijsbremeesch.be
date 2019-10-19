@@ -12,7 +12,9 @@ import { format } from "date-fns"
 const options = {
   renderNode: {
     [BLOCKS.EMBEDDED_ASSET]: node => {
-      const { file } = node.data.target.fields
+      const file = node.data.target.fields && node.data.target.fields.file
+
+      if (!file) return null
       return <img src={file["en-US"].url} alt="" width="100%" />
     },
   },
