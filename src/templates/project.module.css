@@ -4,28 +4,36 @@
   min-height: 180px;
 }
 
-.quick-info-list {
-  display: flex;
-  justify-content: space-between;
+.taglist {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.taglist .taglist-item {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  column-gap: 10px;
+
+  direction: rtl;
   margin-top: var(--m);
 }
 
-.quick-info-list dt,
-aside dt {
-  font-style: italic;
+.taglist-item-title {
   font-size: 1.2rem;
+  font-style: italic;
+  text-align: left;
 }
 
-.quick-info-list dd {
+.taglist-item-desc {
   line-height: 100%;
 }
 
 aside {
-  width: 30%;
+  display: none;
 }
 
-aside div,
-aside div ol {
+aside .taglist-item,
+aside .taglist-item ol {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -48,7 +56,7 @@ aside div ol {
 }
 
 .content-container {
-  width: 70%;
+  width: 100%;
   margin-right: var(--l);
   margin-bottom: var(--xl);
 }
@@ -70,4 +78,34 @@ aside div ol {
   content: "•";
   display: block;
   margin-right: var(--m);
+}
+
+@media (min-width: 560px) {
+  .taglist {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  .taglist .taglist-item {
+    direction: unset;
+    display: block;
+  }
+
+  .taglist-main-item:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .taglist .taglist-aside-item {
+    display: none;
+  }
+
+  aside {
+    display: block;
+    width: 40%;
+  }
+
+  .content-container {
+    width: 60%;
+  }
 }
