@@ -39,7 +39,7 @@ const ProjectPage = ({ data, pageContext }) => {
 
       {project.onlineLink && (
         <div className={`${styles.taglistItem} ${styles.taglistAsideItem}`}>
-          <dt className={styles.taglistItemTitle}>Link</dt>
+          <dt className={styles.taglistItemTitle}>Online</dt>
           <dd className={styles.taglistItemDesc}>
             <a className="default-link" href={project.onlineLink}>
               {getDomainFromUrl(project.onlineLink)}
@@ -50,7 +50,7 @@ const ProjectPage = ({ data, pageContext }) => {
 
       {project.behanceLink && (
         <div className={`${styles.taglistItem} ${styles.taglistAsideItem}`}>
-          <dt className={styles.taglistItemTitle}>Link</dt>
+          <dt className={styles.taglistItemTitle}>Full project</dt>
           <dd className={styles.taglistItemDesc}>
             <a className="default-link" href={project.behanceLink}>
               behance.com

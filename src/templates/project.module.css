@@ -11,7 +11,7 @@
 
 .taglist .taglist-item {
   display: grid;
-  grid-template-columns: 64px 1fr;
+  grid-template-columns: 72px 1fr;
   column-gap: 10px;
 
   direction: rtl;
@@ -90,7 +90,7 @@ aside .taglist-item ol {
     display: block;
   }
 
-  .taglist-main-item:last-child {
+  .taglist-main-item:nth-child(3) {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
