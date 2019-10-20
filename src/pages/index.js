@@ -4,6 +4,7 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import SEO from "../components/seo"
 import styles from "./index.module.css"
 import Img from "gatsby-image"
+import { useArrowKeys } from "../lib/useArrowKeys"
 
 const IndexPage = () => {
   const data = useStaticQuery(query)
@@ -20,17 +21,11 @@ const IndexPage = () => {
   const navigateDown = () =>
     navIndex === projectAmt ? setNavIndex(0) : setNavIndex(navIndex + 1)
 
-  const navigateUsingKeys = e => {
-    if (e.key === "ArrowUp" || e.key === "ArrowLeft") navigateUp()
-    if (e.key === "ArrowDown" || e.key === "ArrowRight") navigateDown()
-  }
-
-  React.useEffect(() => {
-    document.addEventListener("keydown", navigateUsingKeys)
-
-    return () => {
-      document.removeEventListener("keydown", navigateUsingKeys)
-    }
+  useArrowKeys({
+    up: navigateUp,
+    left: navigateUp,
+    down: navigateDown,
+    right: navigateDown,
   })
 
   return (

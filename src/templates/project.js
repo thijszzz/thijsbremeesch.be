@@ -9,6 +9,7 @@ import Img from "gatsby-image"
 import styles from "./project.module.css"
 import { format } from "date-fns"
 import { getDomainFromUrl } from "../lib"
+import { useArrowKeys } from "../lib/useArrowKeys"
 
 const options = {
   renderNode: {
@@ -30,18 +31,7 @@ const ProjectPage = ({ data, pageContext: { prevProject, nextProject } }) => {
   const navigateToPrevProject = () =>
     nextProject && navigate(`/project/${nextProject.slug}`)
 
-  const navigateUsingKeys = e => {
-    if (e.key === "ArrowLeft") navigateToNextProject()
-    if (e.key === "ArrowRight") navigateToPrevProject()
-  }
-
-  React.useEffect(() => {
-    document.addEventListener("keydown", navigateUsingKeys)
-
-    return () => {
-      document.removeEventListener("keydown", navigateUsingKeys)
-    }
-  })
+  useArrowKeys({ left: navigateToNextProject, right: navigateToPrevProject })
 
   const renderAsideItems = () => (
     <>
