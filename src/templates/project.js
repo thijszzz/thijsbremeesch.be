@@ -1,6 +1,6 @@
 import React from "react"
 import { Layout } from "../components/Layout"
-import { graphql, Link } from "gatsby"
+import { graphql, Link, navigate } from "gatsby"
 import SEO from "../components/seo"
 import PropTypes from "prop-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
@@ -21,8 +21,27 @@ const options = {
   },
 }
 
-const ProjectPage = ({ data, pageContext }) => {
+const ProjectPage = ({ data, pageContext: { prevProject, nextProject } }) => {
   const { contentfulProject: project } = data
+
+  const navigateToNextProject = () =>
+    prevProject && navigate(`/project/${prevProject.slug}`)
+
+  const navigateToPrevProject = () =>
+    nextProject && navigate(`/project/${nextProject.slug}`)
+
+  const navigateUsingKeys = e => {
+    if (e.key === "ArrowLeft") navigateToNextProject()
+    if (e.key === "ArrowRight") navigateToPrevProject()
+  }
+
+  React.useEffect(() => {
+    document.addEventListener("keydown", navigateUsingKeys)
+
+    return () => {
+      document.removeEventListener("keydown", navigateUsingKeys)
+    }
+  })
 
   const renderAsideItems = () => (
     <>
@@ -105,15 +124,12 @@ const ProjectPage = ({ data, pageContext }) => {
         <aside>{renderAsideItems()}</aside>
       </div>
 
-      {pageContext.prevProject && (
-        <Link to={`/project/${pageContext.prevProject.slug}`}>
-          <button>Previous project</button>
-        </Link>
+      {prevProject && (
+        <button onClick={navigateToPrevProject}>Previous project</button>
       )}
-      {pageContext.nextProject && (
-        <Link to={`/project/${pageContext.nextProject.slug}`}>
-          <button>Next project</button>
-        </Link>
+
+      {nextProject && (
+        <button onClick={navigateToNextProject}>Next project</button>
       )}
     </Layout>
   )
