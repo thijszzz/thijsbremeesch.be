@@ -1,6 +1,6 @@
 import React from "react"
 import { Layout } from "../components/Layout"
-import { graphql, Link } from "gatsby"
+import { graphql, Link, navigate } from "gatsby"
 import SEO from "../components/seo"
 import PropTypes from "prop-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
@@ -8,6 +8,8 @@ import { BLOCKS } from "@contentful/rich-text-types"
 import Img from "gatsby-image"
 import styles from "./project.module.css"
 import { format } from "date-fns"
+import { getDomainFromUrl } from "../lib"
+import { useArrowKeys } from "../lib/useArrowKeys"
 
 const options = {
   renderNode: {
@@ -20,8 +22,53 @@ const options = {
   },
 }
 
-const ProjectPage = ({ data, pageContext }) => {
+const ProjectPage = ({ data, pageContext: { prevProject, nextProject } }) => {
   const { contentfulProject: project } = data
+
+  const navigateToNextProject = () =>
+    prevProject && navigate(`/project/${prevProject.slug}`)
+
+  const navigateToPrevProject = () =>
+    nextProject && navigate(`/project/${nextProject.slug}`)
+
+  useArrowKeys({ left: navigateToNextProject, right: navigateToPrevProject })
+
+  const renderAsideItems = () => (
+    <>
+      <div className={`${styles.taglistItem} ${styles.taglistAsideItem}`}>
+        <dt className={styles.taglistItemTitle}>Team</dt>
+        <dd className={styles.taglistItemDesc}>
+          <ol>
+            {project.team.map(name => (
+              <li key={name}>{name}</li>
+            ))}
+          </ol>
+        </dd>
+      </div>
+
+      {project.onlineLink && (
+        <div className={`${styles.taglistItem} ${styles.taglistAsideItem}`}>
+          <dt className={styles.taglistItemTitle}>Online</dt>
+          <dd className={styles.taglistItemDesc}>
+            <a className="default-link" href={project.onlineLink}>
+              {getDomainFromUrl(project.onlineLink)}
+            </a>
+          </dd>
+        </div>
+      )}
+
+      {project.behanceLink && (
+        <div className={`${styles.taglistItem} ${styles.taglistAsideItem}`}>
+          <dt className={styles.taglistItemTitle}>Full project</dt>
+          <dd className={styles.taglistItemDesc}>
+            <a className="default-link" href={project.behanceLink}>
+              behance.com
+            </a>
+          </dd>
+        </div>
+      )}
+    </>
+  )
 
   return (
     <Layout>
@@ -34,25 +81,27 @@ const ProjectPage = ({ data, pageContext }) => {
         className={styles.headerImage}
       />
 
-      <dl className={styles.quickInfoList}>
-        <div>
-          <dt>Client</dt>
-          <dd>
+      <dl className={styles.taglist}>
+        <div className={`${styles.taglistItem} ${styles.taglistMainItem}`}>
+          <dt className={styles.taglistItemTitle}>Client</dt>
+          <dd className={styles.taglistItemDesc}>
             {project.clients.map(({ name }) => (
               <span key={name}>{name}</span>
             ))}
           </dd>
         </div>
-
-        <div>
-          <dt>Category</dt>
-          <dd>{project.category}</dd>
+        <div className={`${styles.taglistItem} ${styles.taglistMainItem}`}>
+          <dt className={styles.taglistItemTitle}>Category</dt>
+          <dd className={styles.taglistItemDesc}>{project.category}</dd>
+        </div>
+        <div className={`${styles.taglistItem} ${styles.taglistMainItem}`}>
+          <dt className={styles.taglistItemTitle}>Date</dt>
+          <dd className={styles.taglistItemDesc}>
+            {format(new Date(project.date), "MMM yyyy")}
+          </dd>
         </div>
 
-        <div>
-          <dt>Date</dt>
-          <dd>{format(new Date(project.date), "MMM yyyy")}</dd>
-        </div>
+        {renderAsideItems()}
       </dl>
 
       <h1 className={styles.title}>{project.title}</h1>
@@ -62,38 +111,15 @@ const ProjectPage = ({ data, pageContext }) => {
           {documentToReactComponents(project.body.json, options)}
         </div>
 
-        <aside>
-          <dl>
-            <div>
-              <dt>Team</dt>
-              <dd>
-                <ol>
-                  {project.team.map(name => (
-                    <li key={name}>{name}</li>
-                  ))}
-                </ol>
-              </dd>
-            </div>
-
-            <div>
-              <dt>Link</dt>
-              <dd>
-                <a href={project.link}>{project.link}</a>
-              </dd>
-            </div>
-          </dl>
-        </aside>
+        <aside>{renderAsideItems()}</aside>
       </div>
 
-      {pageContext.prevProject && (
-        <Link to={`/project/${pageContext.prevProject.slug}`}>
-          <button>Previous project</button>
-        </Link>
+      {prevProject && (
+        <button onClick={navigateToPrevProject}>Previous project</button>
       )}
-      {pageContext.nextProject && (
-        <Link to={`/project/${pageContext.nextProject.slug}`}>
-          <button>Next project</button>
-        </Link>
+
+      {nextProject && (
+        <button onClick={navigateToNextProject}>Next project</button>
       )}
     </Layout>
   )
@@ -122,7 +148,8 @@ export const pageQuery = graphql`
         name
         link
       }
-      link
+      behanceLink
+      onlineLink
       team
       title
     }
