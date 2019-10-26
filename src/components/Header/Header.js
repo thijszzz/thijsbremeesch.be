@@ -2,14 +2,16 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styles from "./header.module.css"
-import SignatureLogo from "../../assets/svg/signature_logo"
+import LogoBig from "../../assets/svg/logo_big"
+import LogoSmall from "../../assets/svg/logo_small"
 
 export const Header = ({ siteTitle }) => (
   <header className={styles.header}>
-    <h1>
-      <span className="hide">{siteTitle} </span>
+    <h1 className={styles.logo}>
+      <span className="hide">{siteTitle}</span>
       <Link to="/">
-        <SignatureLogo />
+        <LogoBig />
+        <LogoSmall />
       </Link>
     </h1>
 
