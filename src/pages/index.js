@@ -63,6 +63,7 @@ const IndexPage = () => {
                 <button
                   className={styles.projectNavButton}
                   key={`nav-${i}`}
+                  tabIndex={-1}
                   onClick={() => setNavIndex(i)}
                   style={{ transform: i === navIndex && "scale(10, 0.2)" }}
                 />
@@ -74,10 +75,18 @@ const IndexPage = () => {
           </div>
 
           <div className={styles.projectNavArrowsContainer}>
-            <button className={styles.projectNavArrow} onClick={navigateUp}>
+            <button
+              className={styles.projectNavArrow}
+              tabIndex={-1}
+              onClick={navigateUp}
+            >
               ↑
             </button>
-            <button className={styles.projectNavArrow} onClick={navigateDown}>
+            <button
+              className={styles.projectNavArrow}
+              tabIndex={-1}
+              onClick={navigateDown}
+            >
               ↓
             </button>
           </div>
