@@ -5,6 +5,7 @@ import { Header } from "../Header"
 import styles from "./layout.module.css"
 import "../../styles/reset.css"
 import "../../styles/global.css"
+import Helmet from "react-helmet"
 
 export const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -19,6 +20,9 @@ export const Layout = ({ children }) => {
 
   return (
     <>
+      <Helmet>
+        <base target="_blank" href="*" />
+      </Helmet>
       <Header siteTitle={data.site.siteMetadata.title} />
       <main className={styles.container}>{children}</main>
       <footer className={styles.footerContainer}>
