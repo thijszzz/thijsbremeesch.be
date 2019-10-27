@@ -6,6 +6,7 @@ import styles from "./index.module.css"
 import Img from "gatsby-image"
 import { useArrowKeys } from "../lib/useArrowKeys"
 import Arrow from "../assets/svg/arrow"
+import Eye from "../assets/svg/eye"
 
 const IndexPage = () => {
   const data = useStaticQuery(query)
@@ -51,6 +52,7 @@ const IndexPage = () => {
                 <div className={styles.projectTitleContainer}>
                   <h2 className={styles.projectTitle}>{title}</h2>
                   <span className={styles.projectSubtitle}>{tagline}</span>
+                  <Eye />
                 </div>
               </Link>
             </li>
@@ -140,6 +142,7 @@ const query = graphql`
         }
       }
     }
+    # limit should always be an even number
     allContentfulProject(limit: 4) {
       nodes {
         slug

@@ -3,11 +3,15 @@
   margin: 0 auto;
   width: 94vw;
 
-  height: 190px;
+  height: 96px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.logo svg:first-child {
+  display: none;
 }
 
 .nav-list-link {
@@ -20,5 +24,19 @@
 @media (min-width: 768px) {
   .header {
     width: 90vw;
+  }
+}
+
+@media (min-width: 560px) {
+  .header {
+    height: 190px;
+  }
+
+  .logo svg:first-child {
+    display: block;
+  }
+
+  .logo svg:last-child {
+    display: none;
   }
 }
