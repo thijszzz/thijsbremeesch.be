@@ -201,9 +201,21 @@
     background-color: transparent;
     position: relative;
     cursor: pointer;
+
+    transition: top 200ms ease-out;
   }
 
   .project-nav-arrow:first-child {
+    top: -30px;
+  }
+  .project-nav-arrow:first-child:hover {
     top: -40px;
+  }
+
+  .project-nav-arrow:last-child {
+    top: 20px;
+  }
+  .project-nav-arrow:last-child:hover {
+    top: 30px;
   }
 }
