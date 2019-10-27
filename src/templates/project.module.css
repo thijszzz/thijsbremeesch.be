@@ -1,3 +1,7 @@
+.back-link svg {
+  margin-bottom: var(--m);
+}
+
 .headerImage {
   height: 42vw;
   max-height: 504px;

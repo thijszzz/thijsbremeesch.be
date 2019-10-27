@@ -10,6 +10,7 @@ import styles from "./project.module.css"
 import { format } from "date-fns"
 import { getDomainFromUrl } from "../lib"
 import { useArrowKeys } from "../lib/useArrowKeys"
+import ArrowHorizontal from "../assets/svg/arrow_horizontal"
 
 const options = {
   renderNode: {
@@ -73,7 +74,9 @@ const ProjectPage = ({ data, pageContext: { prevProject, nextProject } }) => {
   return (
     <Layout>
       <SEO title={project.title} />
-      <Link to="/">←</Link>
+      <Link to="/" className={styles.backLink}>
+        <ArrowHorizontal />
+      </Link>
 
       <Img
         sizes={project.headerImage.sizes}

@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import styles from "./index.module.css"
 import Img from "gatsby-image"
 import { useArrowKeys } from "../lib/useArrowKeys"
+import Arrow from "../assets/svg/arrow"
 import Eye from "../assets/svg/eye"
 
 const IndexPage = () => {
@@ -82,14 +83,14 @@ const IndexPage = () => {
               tabIndex={-1}
               onClick={navigateUp}
             >
-              ↑
+              <Arrow style={{ transform: "scaleY(-1)" }} />
             </button>
             <button
               className={styles.projectNavArrow}
               tabIndex={-1}
               onClick={navigateDown}
             >
-              ↓
+              <Arrow />
             </button>
           </div>
         </div>
