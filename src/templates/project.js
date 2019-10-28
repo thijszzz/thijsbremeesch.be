@@ -27,12 +27,12 @@ const ProjectPage = ({ data, pageContext: { prevProject, nextProject } }) => {
   const { contentfulProject: project } = data
 
   const navigateToNextProject = () =>
-    prevProject && navigate(`/project/${prevProject.slug}`)
-
-  const navigateToPrevProject = () =>
     nextProject && navigate(`/project/${nextProject.slug}`)
 
-  useArrowKeys({ left: navigateToNextProject, right: navigateToPrevProject })
+  const navigateToPrevProject = () =>
+    prevProject && navigate(`/project/${prevProject.slug}`)
+
+  useArrowKeys({ left: navigateToPrevProject, right: navigateToNextProject })
 
   const renderAsideItems = () => (
     <>
@@ -117,13 +117,24 @@ const ProjectPage = ({ data, pageContext: { prevProject, nextProject } }) => {
         <aside>{renderAsideItems()}</aside>
       </div>
 
-      {prevProject && (
-        <button onClick={navigateToPrevProject}>Previous project</button>
-      )}
+      <div className={styles.bottomNav}>
+        {prevProject ? (
+          <button onClick={navigateToPrevProject} className={styles.prev}>
+            previous
+          </button>
+        ) : (
+          <div />
+        )}
 
-      {nextProject && (
-        <button onClick={navigateToNextProject}>Next project</button>
-      )}
+        {nextProject ? (
+          <button onClick={navigateToNextProject} className={styles.next}>
+            next
+          </button>
+        ) : (
+          <div />
+        )}
+        <div />
+      </div>
     </Layout>
   )
 }
