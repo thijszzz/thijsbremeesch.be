@@ -84,6 +84,36 @@ aside .taglist-item ol {
   margin-right: var(--m);
 }
 
+.bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 64px;
+}
+
+.bottom-nav button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.bottom-nav .prev {
+  font-weight: bold;
+  font-size: 1.6rem;
+  border-bottom: 2px solid var(--c-grey);
+  color: var(--c-grey);
+  padding-bottom: 4px;
+}
+
+.bottom-nav .next {
+  font-family: Arial;
+  font-weight: 900;
+  font-size: 4.2rem;
+  color: var(--c-accent);
+}
+
 @media (min-width: 560px) {
   .taglist {
     grid-template-columns: repeat(3, auto);
