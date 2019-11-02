@@ -1,16 +1,17 @@
 import React from "react"
 import { Layout } from "../components/Layout"
-import { navigate } from "gatsby-link"
 import SEO from "../components/seo"
 import { encode } from "../lib"
 import styles from "./contact.module.css"
 import useForm from "react-hook-form"
 import { regex } from "../lib/regex"
+import { Link } from "gatsby"
 
 const FORM_NAME = "contact"
 
 const ContactPage = () => {
-  const { register, handleSubmit, errors } = useForm()
+  const { register, handleSubmit, errors, reset } = useForm()
+  const [submitted, setSubmitted] = React.useState()
 
   const onSubmit = data => {
     fetch("/", {
@@ -21,7 +22,10 @@ const ContactPage = () => {
         ...data,
       }),
     })
-      .then(() => navigate("/success"))
+      .then(() => {
+        setSubmitted(true)
+        reset()
+      })
       .catch(error => console.error(error))
   }
 
@@ -30,44 +34,59 @@ const ContactPage = () => {
       <SEO title="Contact" />
       <h2>Hello from the other side</h2>
       <p>Say hi 👋🏻</p>
-      <form
-        name={FORM_NAME}
-        onSubmit={handleSubmit(onSubmit)}
-        className={styles.formContainer}
-      >
-        <div className={styles.inputContainer}>
-          <label id="name">name</label>
-          <input
-            name="name"
-            ref={register({ required: true })}
-            className={errors.name && styles.errorInput}
-          />
-          {errors.name && (
-            <span className={styles.errorText}>Name is required</span>
-          )}
-        </div>
 
-        <div className={styles.inputContainer}>
-          <label id="email">email</label>
-          <input
-            name="email"
-            ref={register({ required: true, pattern: regex.email })}
-            className={errors.email && styles.errorInput}
-          />
-          {errors.email && (
-            <span className={styles.errorText}>Email is required</span>
-          )}
+      {submitted && (
+        <div>
+          <span>Thank you, we'll be in touch soon!</span>
+          <br />
+          <Link className="default-link" to="/">
+            Return to homepage
+          </Link>
         </div>
+      )}
 
-        <div className={styles.inputContainer}>
-          <label id="message">your message</label>
-          <textarea name="message" ref={register} rows={6} />
-        </div>
+      {!submitted && (
+        <form
+          name={FORM_NAME}
+          onSubmit={handleSubmit(onSubmit)}
+          className={styles.formContainer}
+        >
+          <div className={styles.inputContainer}>
+            <label id="name">name</label>
+            <input
+              name="name"
+              ref={register({ required: true })}
+              className={errors.name && styles.errorInput}
+            />
+            {errors.name && (
+              <span className={styles.errorText}>Name is required</span>
+            )}
+          </div>
 
-        <button type="submit" className={styles.submit}>
-          send
-        </button>
-      </form>
+          <div className={styles.inputContainer}>
+            <label id="email">email</label>
+            <input
+              name="email"
+              ref={register({ required: true, pattern: regex.email })}
+              className={errors.email && styles.errorInput}
+            />
+            {errors.email && (
+              <span className={styles.errorText}>
+                Please provide a valid email
+              </span>
+            )}
+          </div>
+
+          <div className={styles.inputContainer}>
+            <label id="message">your message</label>
+            <textarea name="message" ref={register} rows={6} />
+          </div>
+
+          <button type="submit" className={styles.submit}>
+            send
+          </button>
+        </form>
+      )}
     </Layout>
   )
 }
