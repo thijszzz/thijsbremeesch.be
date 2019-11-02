@@ -58,7 +58,9 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <span className={styles.quote}>{contentfulAboutPage.quote}</span>
+      <p className={styles.marquee}>
+        <span className={styles.quote}>{contentfulAboutPage.quote}</span>
+      </p>
 
       <section className={styles.content}>
         {documentToReactComponents(contentfulAboutPage.body.json, options)}
