@@ -18,7 +18,7 @@
   position: relative;
   width: 100vw;
   left: -3vw;
-  margin-top: 30%;
+  margin-top: 40%;
 }
 
 .main-image {
@@ -86,6 +86,12 @@
 
 .content p {
   margin-bottom: var(--xl);
+}
+
+@media (min-width: 560px) {
+  .main-container {
+    margin-top: 40%;
+  }
 }
 
 @media (min-width: 768px) {
