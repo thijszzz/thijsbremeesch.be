@@ -74,6 +74,10 @@ aside .taglist-item ol {
   align-items: center;
 }
 
+.main-container p {
+  margin-bottom: var(--l);
+}
+
 .main-container h2:not(:first-child) {
   margin-top: var(--xl);
 }

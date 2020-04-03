@@ -36,16 +36,27 @@ const ProjectPage = ({ data, pageContext: { prevProject, nextProject } }) => {
 
   const renderAsideItems = () => (
     <>
-      <div className={`${styles.taglistItem} ${styles.taglistAsideItem}`}>
-        <dt className={styles.taglistItemTitle}>Team</dt>
-        <dd className={styles.taglistItemDesc}>
-          <ol>
-            {project.team.map(name => (
-              <li key={name}>{name}</li>
-            ))}
-          </ol>
-        </dd>
-      </div>
+      {project.team.length > 0 && (
+        <div className={`${styles.taglistItem} ${styles.taglistAsideItem}`}>
+          <dt className={styles.taglistItemTitle}>Team</dt>
+          <dd className={styles.taglistItemDesc}>
+            <ol>
+              {project.team.map(name => {
+                const link = (name.match(/\[(.*)\]/) || [])[1]
+                const cleanName = name.replace(/ *\[[^)]*\] */g, "")
+
+                return !!link ? (
+                  <a href={link} key={name} className="default-link">
+                    <span>{cleanName}</span>
+                  </a>
+                ) : (
+                  <span key={name}>{cleanName}</span>
+                )
+              })}
+            </ol>
+          </dd>
+        </div>
+      )}
 
       {project.onlineLink && (
         <div className={`${styles.taglistItem} ${styles.taglistAsideItem}`}>
