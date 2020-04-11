@@ -35,12 +35,20 @@
   width: 100%;
 }
 
-.project-container:nth-last-child(n + 3) {
+.project-container:not(:last-child) {
   margin-bottom: var(--l);
 }
 
 .project-container a {
   text-decoration: none;
+}
+
+.project-image-container {
+  height: 50vw;
+}
+
+.project-image {
+  height: 100%;
 }
 
 .project-image:hover {
@@ -111,6 +119,14 @@
     width: 49%;
   }
 
+  .project-container:nth-last-child(n + 3) {
+    margin-bottom: var(--l);
+  }
+
+  .project-image-container {
+    height: 200px;
+  }
+
   .contact-container {
     flex-direction: row;
   }
@@ -124,6 +140,7 @@
   .project-container {
     display: none;
     width: 100%;
+    height: 480px;
   }
 
   .project-container:nth-last-child(n + 3) {
@@ -176,7 +193,6 @@
 
   .project-image {
     width: 100%;
-    height: 100%;
     position: absolute;
     top: -16px;
     left: -16px;
