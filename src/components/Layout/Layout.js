@@ -26,7 +26,7 @@ export const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <main className={styles.container}>{children}</main>
       <footer className={styles.footerContainer}>
-        © {new Date().getFullYear()} - Wouter Landuydt
+        © {new Date().getFullYear()} - Thijs Bremeesch
       </footer>
     </>
   )

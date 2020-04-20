@@ -46,7 +46,7 @@ const ProjectPage = ({ data, pageContext: { prevProject, nextProject } }) => {
                 const cleanName = name.replace(/ *\[[^)]*\] */g, "")
 
                 return !!link ? (
-                  <a href={link} key={name} className="default-link">
+                  <a href={link} key={name} className={styles.invisibleLink}>
                     <span>{cleanName}</span>
                   </a>
                 ) : (

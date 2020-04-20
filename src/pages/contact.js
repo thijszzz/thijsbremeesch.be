@@ -6,6 +6,7 @@ import styles from "./contact.module.css"
 import useForm from "react-hook-form"
 import { regex } from "../lib/regex"
 import { Link } from "gatsby"
+import ArrowHorizontal from "../assets/svg/arrow_horizontal"
 
 const FORM_NAME = "contact"
 
@@ -32,8 +33,11 @@ const ContactPage = () => {
   return (
     <Layout>
       <SEO title="Contact" />
-      <h2>Hello from the other side</h2>
-      <p>Say hi 👋🏻</p>
+      {/* <h2>Hello from the other side</h2> */}
+      <Link to="/" className={styles.backLink}>
+        <ArrowHorizontal />
+      </Link>
+      <h2>Say hi 👋🏻</h2>
 
       {submitted && (
         <div>
@@ -64,7 +68,7 @@ const ContactPage = () => {
           </div>
 
           <div className={styles.inputContainer}>
-            <label id="email">email</label>
+            <label id="email">e-mail</label>
             <input
               name="email"
               ref={register({ required: true, pattern: regex.email })}

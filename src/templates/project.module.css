@@ -13,6 +13,16 @@
   grid-template-columns: 1fr;
 }
 
+.invisible-link {
+  color: var(--c-black);
+  text-decoration: none;
+  border-bottom: 2px solid var(--c-white);
+}
+
+.invisible-link:hover  {
+  border-bottom: 2px solid var(--c-accent);
+}
+
 .taglist .taglist-item {
   display: grid;
   grid-template-columns: 72px 1fr;
@@ -26,6 +36,7 @@
   font-size: 1.2rem;
   font-style: italic;
   text-align: left;
+  color: var(--c-grey);
 }
 
 .taglist-item-desc {

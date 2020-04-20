@@ -32,5 +32,5 @@ b {
 }
 
 ::selection {
-  background-color: rgba(238, 110, 32, 0.25);
+  background-color: var(--c-accent);
 }

@@ -5,16 +5,16 @@
 .inputContainer {
   display: flex;
   flex-direction: column;
-  margin-bottom: var(--l);
+  margin-bottom: var(--xl);
 }
 
 label {
-  margin-bottom: var(--m);
+  margin-bottom: var(--s);
 }
 
 input,
 textarea {
-  border: 1px solid var(--c-black);
+  border: 2px solid var(--c-black);
 
   color: var(--c-black);
   font-family: Karla;
