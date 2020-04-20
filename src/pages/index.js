@@ -62,7 +62,7 @@ const IndexPage = () => {
         <div className={styles.projectNavContainer}>
           <div className={styles.projectNavButtonContainer}>
             {projects.map((_project, i) => (
-              <>
+              <React.Fragment key={`button-${i}`}>
                 <button
                   className={styles.projectNavButton}
                   key={`nav-${i}`}
@@ -73,7 +73,7 @@ const IndexPage = () => {
                 {i !== projects.length - 1 && (
                   <div className={styles.projectNavSeparator} />
                 )}
-              </>
+              </React.Fragment>
             ))}
           </div>
 
