@@ -83,7 +83,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: var(--xl);
+  margin-top: 64px;
+  /* margin-top: var(--xl); */
 
   flex-direction: column;
 }
@@ -96,12 +97,11 @@
 
 .links-list {
   display: flex;
-
-  margin-top: var(--l);
+  margin-top: var(--xl);
 }
 
 .links-list-item:not(:last-child) {
-  margin-right: var(--l);
+  margin-right: var(--xl);
 }
 
 .links-list-item img {
@@ -134,6 +134,9 @@
   .links-list {
     margin-top: 0;
   }
+  .links-list-item:not(:last-child) {
+    margin-right: var(--l);
+  }
 }
 
 @media (min-width: 768px) {
@@ -151,7 +154,7 @@
     display: block;
     position: absolute;
     right: -5%;
-    top: 30%;
+    top: 20%;
     opacity: 0;
 
     animation: fadeIn 300ms;

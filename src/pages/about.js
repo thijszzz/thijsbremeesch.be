@@ -45,13 +45,13 @@ const AboutPage = () => {
                   href={contentfulAboutPage.resume.file.url}
                   className="default-link"
                 >
-                  My resume
+                  View my resume here
                 </a>
               </li>
             )}
             <li>
               <Link to="/contact" className="default-link">
-                Contact me
+                Having a question or just want to say ‘hi’
               </Link>
             </li>
           </ol>
