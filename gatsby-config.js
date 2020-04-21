@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: `Thijs Bremeesch`,
     description: `Portfolio of Thijs Bremeesch`,
-    author: `Wouter Landuydt`,
+    author: `Thijs Bremeesch`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
