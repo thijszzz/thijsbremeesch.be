@@ -2,8 +2,9 @@ require("dotenv").config({ path: ".env" })
 
 module.exports = {
   siteMetadata: {
-    title: `Thijs Bremeesch`,
-    description: `Portfolio of Thijs Bremeesch`,
+    title: `Hi, I'm Thijs Bremeesch`,
+    description: `I’m Thijs Bremeesch, A normal boy with an abnormal love for (visual) design.
+    Interested in being my next best work or just having a simple question? Let’s have a quick chat, no string attached!`,
     author: `Thijs Bremeesch`,
   },
   plugins: [

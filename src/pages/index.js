@@ -98,8 +98,7 @@ const IndexPage = () => {
 
       <section className={styles.contactContainer}>
         <p className={styles.contactText}>
-          Interested in being my next best (art)work or do you have just a
-          simple question?
+            Interested in being my next best work or just having a simple question?
           <br />
           <Link className="default-link" to="/contact">
             Let’s have a quick chat
