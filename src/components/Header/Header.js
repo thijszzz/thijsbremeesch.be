@@ -26,27 +26,13 @@ export const Header = ({ siteTitle }) => {
 
       <nav className={styles.nav}>
         <ol className={styles.navList}>
-          {pages.map(page => {
-            const isActive = window.location.pathname === page.to
-
-            if (isActive) {
-              return (
-                <li className={styles.navListItemActive}>
-                  <Link className={styles.navListLinkActive} to={page.to}>
-                    {page.name}
-                  </Link>
-                </li>
-              )
-            }
-
-            return (
+          {pages.map(page => (
               <li className={styles.navListItem}>
-                <Link className={styles.navListLink} to={page.to}>
+                <Link activeClassName={styles.navListItemActive} className={styles.navListLink} to={page.to}>
                   {page.name}
                 </Link>
               </li>
-            )
-          })}
+          ))}
         </ol>
       </nav>
     </header>

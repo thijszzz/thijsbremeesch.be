@@ -36,14 +36,12 @@
   pointer-events: none;
 }
 
-.nav-list-link-active {
-  font-weight: bold;
-  text-decoration: none;
-  color: var(--c-black);
-}
-
 .nav-list-link:hover {
   border-bottom: 2px solid var(--c-black);
+}
+
+.nav-list-item-active:hover {
+  border-bottom: none;
 }
 
 @media (min-width: 768px) {
