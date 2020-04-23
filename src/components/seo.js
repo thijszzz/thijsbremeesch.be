@@ -53,7 +53,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
         },
         {
           name: `twitter:creator`,
@@ -67,29 +67,19 @@ function SEO({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `og:url`,
+          content: "thijsbremeesch.be"
+        },
+        {
+          name: `twitter:url`,
+          content: "thijsbremeesch.be"
+        },
+        {
+          name: `og:image`,
+          content: ``
+        }
       ].concat(meta)}
-
-      //       <!-- Primary Meta Tags --></meta>
-      // <title>Hi, I'm Thijs Bremeesch</title>
-      // <meta name="title" content="Hi, I'm Thijs Bremeesch">
-      // <meta name="description" content="I’m Thijs Bremeesch, A normal boy with an abnormal love for (visual) design.
-      // Interested in being my next best work or just having a simple question? Let’s have a quick chat, no string attached!">
-
-      // <!-- Open Graph / Facebook -->
-      // <meta property="og:type" content="website">
-      // <meta property="og:url" content="https://metatags.io/">
-      // <meta property="og:title" content="Hi, I'm Thijs Bremeesch">
-      // <meta property="og:description" content="I’m Thijs Bremeesch, A normal boy with an abnormal love for (visual) design.
-      // Interested in being my next best work or just having a simple question? Let’s have a quick chat, no string attached!">
-      // <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
-
-      // <!-- Twitter -->
-      // <meta property="twitter:card" content="summary_large_image">
-      // <meta property="twitter:url" content="https://metatags.io/">
-      // <meta property="twitter:title" content="Hi, I'm Thijs Bremeesch">
-      // <meta property="twitter:description" content="I’m Thijs Bremeesch, A normal boy with an abnormal love for (visual) design.
-      // Interested in being my next best work or just having a simple question? Let’s have a quick chat, no string attached!">
-      // <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
     />
   )
 }
