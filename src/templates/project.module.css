@@ -1,0 +1,160 @@
+.back-link svg {
+  margin-bottom: var(--m);
+}
+
+.headerImage {
+  height: 42vw;
+  max-height: 504px;
+  min-height: 180px;
+}
+
+.taglist {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.invisible-link {
+  color: var(--c-black);
+  text-decoration: none;
+  border-bottom: 2px solid var(--c-white);
+}
+
+.invisible-link:hover  {
+  border-bottom: 2px solid var(--c-accent);
+}
+
+.taglist .taglist-item {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  column-gap: 10px;
+
+  direction: rtl;
+  margin-top: var(--m);
+}
+
+.taglist-item-title {
+  font-size: 1.2rem;
+  font-style: italic;
+  text-align: left;
+  color: var(--c-grey);
+}
+
+.taglist-item-desc {
+  line-height: 100%;
+}
+
+aside {
+  display: none;
+}
+
+aside .taglist-item,
+aside .taglist-item ol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: var(--l);
+}
+
+.title {
+  margin: var(--xl) 0;
+  font-family: Arial;
+  font-size: 4.2rem;
+  font-weight: 900;
+}
+
+.main-container {
+  display: flex;
+}
+
+.main-container img {
+  margin-top: var(--l);
+}
+
+.content-container {
+  width: 100%;
+  margin-right: var(--l);
+  margin-bottom: var(--xl);
+}
+
+.main-container h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: var(--l);
+
+  display: flex;
+  align-items: center;
+}
+
+.main-container p {
+  margin-bottom: var(--l);
+}
+
+.main-container h2:not(:first-child) {
+  margin-top: var(--xl);
+}
+
+.main-container h2:before {
+  content: "•";
+  display: block;
+  margin-right: var(--m);
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 64px;
+}
+
+.bottom-nav button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.bottom-nav .prev {
+  font-weight: bold;
+  font-size: 1.6rem;
+  border-bottom: 2px solid var(--c-grey);
+  color: var(--c-grey);
+  padding-bottom: 4px;
+}
+
+.bottom-nav .next {
+  font-family: Arial;
+  font-weight: 900;
+  font-size: 4.2rem;
+  color: var(--c-accent);
+}
+
+@media (min-width: 560px) {
+  .taglist {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  .taglist .taglist-item {
+    direction: unset;
+    display: block;
+  }
+
+  .taglist-main-item:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .taglist .taglist-aside-item {
+    display: none;
+  }
+
+  aside {
+    display: block;
+    width: 40%;
+  }
+
+  .content-container {
+    width: 60%;
+  }
+}

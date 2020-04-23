@@ -1,0 +1,153 @@
+@keyframes popIn {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  100% {
+    top: -24px;
+    left: -24px;
+  }
+}
+
+.main-container {
+  display: flex;
+  background-color: var(--c-black);
+  flex-direction: column;
+  align-items: flex-end;
+
+  position: relative;
+  width: 100vw;
+  left: -3vw;
+  margin-top: 40%;
+}
+
+.main-image {
+  position: absolute;
+  width: 50%;
+  animation: popIn 200ms ease-out;
+  animation-fill-mode: forwards;
+  margin-top: -30%;
+}
+
+.main-content-container {
+  color: var(--c-white);
+  margin: var(--l);
+  margin-top: -42px;
+}
+
+.main-intro-container p:first-child {
+  width: 80%;
+  margin-top: var(--l);
+  margin-bottom: var(--l);
+
+  font-family: Arial;
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1.4;
+}
+
+.main-link-list {
+  margin-top: var(--xl);
+  margin-bottom: var(--l);
+}
+
+.main-link-list li {
+  display: flex;
+  align-items: center;
+}
+
+.main-link-list li a {
+  color: var(--c-white);
+}
+
+.main-link-list li:not(:last-child) {
+  margin-bottom: var(--l);
+}
+
+.main-link-list li:before {
+  content: "";
+  display: block;
+  border-bottom: none;
+  background-color: var(--c-white);
+  width: 6px;
+  height: 6px;
+  margin-right: var(--l);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  position: relative;
+  width: 100vw;
+  left: -3vw;
+}
+
+.quote {
+  display: inline-block;
+  padding-left: 100%;
+  /* show the marquee just outside the paragraph */
+  animation: marquee 15s linear infinite;
+
+  font-family: Arial;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--c-grey);
+  margin-top: var(--l);
+  margin-bottom: var(--xl);
+}
+
+.content p {
+  margin-bottom: var(--xl);
+}
+
+@media (min-width: 560px) {
+  .main-container {
+    margin-top: 40%;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-container {
+    flex-direction: row;
+    align-items: flex-start;
+
+    margin-left: 16px;
+    margin-top: 16px;
+    width: 100%;
+    left: 0;
+  }
+
+  .marquee {
+    width: 100%;
+    left: 0;
+  }
+
+  .main-image {
+    margin-top: 0;
+  }
+
+  .main-content-container {
+    width: 50%;
+    margin: var(--xl) var(--l) var(--l) 0;
+  }
+
+  .main-link-list {
+    margin-top: 80px;
+  }
+
+  .content {
+    margin-left: 16%;
+    margin-right: 24%;
+  }
+}

@@ -1,0 +1,14 @@
+:root {
+  --xs: 2px;
+  --s: 4px;
+  --m: 8px;
+  --l: 16px;
+  --xl: 32px;
+
+  --max-width: 960px;
+
+  --c-black: #090909;
+  --c-grey: #a2a2a2;
+  --c-white: #fcfcfc;
+  --c-accent: #f28d4f;
+}
