@@ -19,6 +19,29 @@
   text-decoration: none;
   color: var(--c-black);
 }
+
+.nav-list-item-active {
+  position: relative;
+}
+
+.nav-list-item-active:before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 110%;
+  height: 2px;
+  background-color: var(--c-black);
+  top: 50%;
+  left: -5%;
+  pointer-events: none;
+}
+
+.nav-list-link-active {
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--c-black);
+}
+
 .nav-list-link:hover {
   border-bottom: 2px solid var(--c-black);
 }
