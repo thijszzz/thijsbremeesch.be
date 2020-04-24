@@ -20,6 +20,10 @@
   color: var(--c-black);
 }
 
+.nav-list-link:hover {
+  border-bottom: 2px solid var(--c-black);
+}
+
 .nav-list-item-active {
   position: relative;
 }
@@ -31,13 +35,9 @@
   width: 110%;
   height: 2px;
   background-color: var(--c-black);
-  top: 50%;
+  top: 55%;
   left: -5%;
   pointer-events: none;
-}
-
-.nav-list-link:hover {
-  border-bottom: 2px solid var(--c-black);
 }
 
 .nav-list-item-active:hover {
