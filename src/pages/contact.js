@@ -34,14 +34,16 @@ const ContactPage = () => {
     <Layout>
       <SEO title="Contact" />
       {/* <h2>Hello from the other side</h2> */}
-      <Link to="/" className={styles.backLink}>
+      {/* <Link to="/" className={styles.backLink}>
         <ArrowHorizontal />
-      </Link>
-      <h2>Say hi 👋🏻</h2>
+      </Link> */}
+      {/* <h2>Say hi 👋🏻</h2> */}
 
       {submitted && (
         <div>
-          <span>Thank you, we'll be in touch soon!</span>
+          <h2 className={styles.contactFormSubmitedTitle}>
+            Thank you, we'll be in touch soon!
+          </h2>
           <br />
           <Link className="default-link" to="/">
             Return to homepage
@@ -55,40 +57,55 @@ const ContactPage = () => {
           onSubmit={handleSubmit(onSubmit)}
           className={styles.formContainer}
         >
-          <div className={styles.inputContainer}>
-            <label id="name">name</label>
-            <input
-              name="name"
-              ref={register({ required: true })}
-              className={errors.name && styles.errorInput}
-            />
-            {errors.name && (
-              <span className={styles.errorText}>Name is required</span>
-            )}
-          </div>
+          <Link to="/" className={styles.backLink}>
+            <ArrowHorizontal />
+          </Link>
+          <h2 className={styles.title}>Hello you! 👋🏻</h2>
+          <p>So nice to see you here.</p>
 
-          <div className={styles.inputContainer}>
-            <label id="email">e-mail</label>
-            <input
-              name="email"
-              ref={register({ required: true, pattern: regex.email })}
-              className={errors.email && styles.errorInput}
-            />
-            {errors.email && (
-              <span className={styles.errorText}>
-                Please provide a valid email
-              </span>
-            )}
-          </div>
+          <div className={styles.inputContainerPosition}>
+            <div className={styles.inputContainer}>
+              <label id="name">name</label>
+              <input
+                name="name"
+                placeholder="your awesome name"
+                ref={register({ required: true })}
+                className={errors.name && styles.errorInput}
+              />
+              {errors.name && (
+                <span className={styles.errorText}>Name is required</span>
+              )}
+            </div>
 
-          <div className={styles.inputContainer}>
-            <label id="message">your message</label>
-            <textarea name="message" ref={register} rows={6} />
-          </div>
+            <div className={styles.inputContainer}>
+              <label id="email">e-mail</label>
+              <input
+                name="email"
+                placeholder="to reply your question"
+                ref={register({ required: true, pattern: regex.email })}
+                className={errors.email && styles.errorInput}
+              />
+              {errors.email && (
+                <span className={styles.errorText}>
+                  Please provide a valid email
+                </span>
+              )}
+            </div>
 
-          <button type="submit" className={styles.submit}>
-            send
-          </button>
+            <div className={styles.inputContainer}>
+              <label id="message">your message</label>
+              <textarea
+                name="message"
+                placeholder="hi, would be a perfect start"
+                ref={register}
+                rows={6}
+              />
+            </div>
+
+            <button type="submit" className={styles.submit}>
+              send
+            </button>
+          </div>
         </form>
       )}
     </Layout>

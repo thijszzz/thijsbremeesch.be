@@ -99,11 +99,19 @@ const ProjectPage = ({ data, pageContext: { prevProject, nextProject } }) => {
         <div className={`${styles.taglistItem} ${styles.taglistMainItem}`}>
           <dt className={styles.taglistItemTitle}>Client</dt>
           <dd className={styles.taglistItemDesc}>
-            {project.clients.map(client => (
-              client.link
-                ? <a key={client.name} className={styles.invisibleLink} href={client.link}>{client.name}</a>
-                : <span key={client.name}>{client.name}</span>
-            ))}
+            {project.clients.map(client =>
+              client.link ? (
+                <a
+                  key={client.name}
+                  className={styles.invisibleLink}
+                  href={client.link}
+                >
+                  {client.name}
+                </a>
+              ) : (
+                <span key={client.name}>{client.name}</span>
+              )
+            )}
           </dd>
         </div>
         <div className={`${styles.taglistItem} ${styles.taglistMainItem}`}>

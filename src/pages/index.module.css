@@ -112,6 +112,7 @@
 
 .links-list-item img:hover {
   opacity: 0.8;
+  transition: 150ms;
 }
 
 @media (min-width: 560px) {

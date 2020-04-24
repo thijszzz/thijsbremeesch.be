@@ -33,7 +33,7 @@
 }
 
 .taglist-item-title {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-style: italic;
   text-align: left;
   color: var(--c-grey);
@@ -67,13 +67,15 @@ aside .taglist-item ol {
 }
 
 .main-container img {
-  margin-top: var(--l);
+  margin-top: var(--xl);
+  margin-bottom: var(--l);
+  ;
 }
 
 .content-container {
   width: 100%;
   margin-right: var(--l);
-  margin-bottom: var(--xl);
+  margin-bottom: var(--xxl);
 }
 
 .main-container h2 {
@@ -90,13 +92,13 @@ aside .taglist-item ol {
 }
 
 .main-container h2:not(:first-child) {
-  margin-top: var(--xl);
+  margin-top: var(--xxl);
 }
 
 .main-container h2:before {
   content: "•";
   display: block;
-  margin-right: var(--m);
+  margin-right: var(--s);
 }
 
 .bottom-nav {

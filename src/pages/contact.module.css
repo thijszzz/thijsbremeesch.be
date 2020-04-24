@@ -8,13 +8,33 @@
   margin-bottom: var(--xl);
 }
 
+.inputContainerPosition{
+  margin: var(--xl) 0;
+}
+
+.title{
+  margin-top: var(--xl);
+  font-family: Arial;
+  font-size: 4.2rem;
+  font-weight: 900;
+}
+
+::placeholder{
+  color: var(--c-grey);
+}
+
 label {
   margin-bottom: var(--s);
+}
+input:focus,
+textarea:focus {
+  border: 2px solid var(--c-accent);
 }
 
 input,
 textarea {
   border: 2px solid var(--c-black);
+  outline: none;
 
   color: var(--c-black);
   font-family: Karla;
@@ -36,15 +56,26 @@ textarea {
 }
 
 .submit {
-  border: none;
+  border: 2px solid var(--c-black);
   color: var(--c-black);
-  border-bottom: 2px solid var(--c-accent);
   cursor: pointer;
 
+  width: 80px;
+  height: 48px;
   background-color: transparent;
   padding: 0;
-  padding-bottom: 2px;
   font-size: 1.6rem;
+}
+
+.submit:hover{
+  background-color: var(--c-accent);
+  color: var(--c-white);
+  border: none;
+  border-bottom: 2px solid var(--c-black);
+}
+
+.contactFormSubmitedTitle{
+  margin-top: var(--xl);
 }
 
 @media (min-width: 768px) {
